@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title> title </title>
+</head>
+<body>
+    
+    {% for plant in plants %}
+        {{plant.id}}<br>
+        {{plant.name}}<br>
+        {{plant.species}}<br>
+        {{plant.added_date}}<br>
+        {{plant.irrigation_frequency}}<br>
+    {% endfor %}
+
+</body>
+</html>

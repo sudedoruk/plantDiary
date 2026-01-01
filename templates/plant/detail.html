@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title> title </title>
+</head>
+<body>
+<h2>Bitki Bilgileri</h2>
+
+{{ plant.id }}<br>
+{{ plant.name }}<br>
+{{ plant.species }}<br>
+{{ plant.added_date }}<br>
+{{ plant.irrigation_frequency }}<br>
+
+<hr>
+
+<h3>Bakım Kayıtları</h3>
+
+{% if carelogs %}
+    {% for log in plant.care_logs.all %}
+        <p>
+            {{ log.date }} <br>
+            {{ log.watered|yesno:"Sulandı,Sulanmadı" }}<br>
+            {{ log.fertilized|yesno:"Gübrelendi,Gübrelenmedi" }}<br>
+            {{ log.notes }} 
+        </p>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>Bu bitki için henüz bakım kaydı yok.</p>
+{% endif %}
+</body>
+</html>

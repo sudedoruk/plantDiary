@@ -8,7 +8,7 @@
     
     {% for plant in plants %}
         {{plant.id}}<br>
-        {{plant.name}}<br>
+        <a href="{{plant.get_absolute_url}}">{{plant.name}}</a><br>
         {{plant.species}}<br>
         {{plant.added_date}}<br>
         {{plant.irrigation_frequency}}<br>

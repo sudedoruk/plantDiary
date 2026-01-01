@@ -1,12 +1,12 @@
 from django.urls import path
 from .views import *
-
+app_name='plant'
 urlpatterns = [
 
-    path('index',plant_index),
-    path('delete',plant_delete),
-    path('detail',plant_detail),
-    path('update',plant_update),
-    path('create',plant_create),
+    path('index',plant_index,name='index'),
+    path('delete',plant_delete,name='delete'),
+    path('<int:id>/',plant_detail,name='detail'),
+    path('update',plant_update,name='update'),
+    path('create',plant_create,name='create'),
 
 ]
